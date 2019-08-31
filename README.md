@@ -16,7 +16,7 @@ for run this code you need to give this command from your terminal.
 git clone git@github.com:starboy-jb/Friend-Standing-Tracker.git
 ```
 
-Now go to manually in the tracker folder and You need to edit two file **friendList.txt** and **yourHandle.txt** and replace the content in it accordingly.
+Now go to manually in the tracker folder and You need to edit two file **friendList.txt** and **yourHandle.txt** and replace the content in it accordingly. Now go to the terminal.
 
 - Navigate to Codechef-Announcer directory
 
