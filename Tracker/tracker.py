@@ -1,6 +1,7 @@
 import requests, json, time
 from plyer import notification
 from collections import defaultdict
+from sys import argv
 
 def message(user):
   notification.notify (
@@ -19,7 +20,6 @@ class FriendSubmissionTracker(object):
 		contest_code = self.contest_code
 		friendList = self.friendList
 		friendRankList = []
-		print(friendList)
 		for friend in friendList:
 			try:
 				url = 'https://www.codechef.com/api/rankings/{}?search={}'.format(contest_code, friend)
@@ -29,10 +29,8 @@ class FriendSubmissionTracker(object):
 				if len(res) == 0:
 					friendRankList.append([100000, friend])
 					continue
-				print(friend, res[0]['rank'])
 				friendRankList.append([res[0]['rank'], friend])
 			except Exception as e:
-				print(e)
 				break
 		friendRankList.sort()
 		return friendRankList
@@ -65,8 +63,18 @@ class FriendSubmissionTracker(object):
 
 if __name__ == '__main__':
 	# replace contest code as the current contest code
-	contest_code = 'COOK109A'
-	friendList = ['kal013', 'uwi', 'aayush9', 'motarack']
-	your_handle = 'rahuldugar'
+	if len(argv) > 1: # If there is  argument
+		contest_code = argv[1]
+	else:
+		contest_code = input("Enter contest code : ")
+
+	file = open('friendList.txt', 'r') 
+	friendList = file.read()
+	file.close()
+	temp = list(friendList.split('\n'))
+	friendList = list(temp)
+	friendList = friendList[1:]
+	file = open('yourHandle.txt', 'r') 
+	your_handle = file.read()
 	Contest = FriendSubmissionTracker(contest_code, friendList, your_handle)
 	Contest.run()
