@@ -1,5 +1,9 @@
-4
+8
 uwi
 white2302
 kal013
 jtnydv25
+fastboot
+lowjack
+cyclades
+umangrules
