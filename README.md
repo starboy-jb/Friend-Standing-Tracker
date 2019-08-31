@@ -1,6 +1,6 @@
 # Friend-Standing-Tracker
 
-A Python Script which will be responsible for tracking your friends stading of the contest.
+A Python Script which will be responsible for tracking your friends standing of the contest.
 
 You just need to replace contest code and run this python program on the background.
 
