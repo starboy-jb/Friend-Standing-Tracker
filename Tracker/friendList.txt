@@ -7,3 +7,4 @@ fastboot
 lowjack
 cyclades
 umangrules
+masterbios
